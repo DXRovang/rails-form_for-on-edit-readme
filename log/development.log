@@ -835,3 +835,31 @@ app/controllers/posts_controller.rb:25:in `update'
   Rendering /Users/alexanderrovang/.rvm/gems/ruby-2.7.2/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/alexanderrovang/.rvm/gems/ruby-2.7.2/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /Users/alexanderrovang/.rvm/gems/ruby-2.7.2/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.3ms)
+Started PUT "/posts/5" for 127.0.0.1 at 2021-03-03 15:01:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TDJaU/NyQl8Ge2RIMLbmGfysGJFoFmvKxjmicNdGQ3XxQ7Fc9f9sVdTUgyObJ0+RJ2ZaO8KHbzPBQbNijMUHHQ==", "title"=>"Something Special", "description"=>"blahblahblah!!", "commit"=>"Submit Post", "id"=>"5"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 400 Bad Request in 23ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/posts_controller.rb:25:in `update'
+  Rendering /Users/alexanderrovang/.rvm/gems/ruby-2.7.2/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/alexanderrovang/.rvm/gems/ruby-2.7.2/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/alexanderrovang/.rvm/gems/ruby-2.7.2/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering /Users/alexanderrovang/.rvm/gems/ruby-2.7.2/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/alexanderrovang/.rvm/gems/ruby-2.7.2/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendering /Users/alexanderrovang/.rvm/gems/ruby-2.7.2/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/alexanderrovang/.rvm/gems/ruby-2.7.2/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/alexanderrovang/.rvm/gems/ruby-2.7.2/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.2ms)
+Started GET "/posts/new" for 127.0.0.1 at 2021-03-03 15:13:04 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 281ms (Views: 261.7ms | ActiveRecord: 0.6ms)
+
+
